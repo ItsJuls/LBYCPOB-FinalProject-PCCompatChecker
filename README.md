@@ -20,7 +20,7 @@ This means the repository itself is part of your grade — not just the code ins
 
 1. **Create the repository**
    - One member creates a **new GitHub repository** (public or private — private is fine, just add your instructor as a collaborator).
-   - Repository name convention: `LBYCPXX-FinalProject-<ShortProjectName>` (adjust prefix to your actual course code).
+   - Repository name convention: `LBYCPOB-FinalProject-<ShortProjectName>` (adjust prefix to your actual course code).
 
 2. **Add all team members as collaborators**
    - Settings → Collaborators → Add each member by GitHub username.
@@ -147,7 +147,6 @@ CORE FEATURES (Recommended):
 - [ ] `README.txt` completed with all required sections
 - [ ] `.gitignore` added
 - [ ] Branching strategy agreed upon (`main` + feature branches)
-- [ ] Issues/tasks logged and assigned per member
 - [ ] Each member has made at least one initial commit under their own account
 
 **Reminder:** Since group contribution is assessed through GitHub activity, an incomplete or GitHub-inactive member will be graded **zero on the project**, even if the team submits a working application. Set up your workflow so that everyone's participation is visible from the start — not reconstructed at the deadline.
