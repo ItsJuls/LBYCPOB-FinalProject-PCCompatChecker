@@ -1,4 +1,4 @@
-# Final Project — GitHub Repository Initiation Guidelines
+# Final Project: GitHub Repository Initiation Guidelines
 
 These guidelines walk your team (or you, if going solo) through **setting up your Final Project GitHub repository correctly from day one**, and specify exactly what your `README.txt` proposal must contain. Follow this before writing a single line of application code.
 
@@ -12,22 +12,22 @@ Per the Final Project Policy:
 - Groups are **at most 3 members** (solo is allowed).
 - **If working in a group, contributions are evaluated based on GitHub activity.** Members with no visible contribution (commits, PRs, issues, etc.) will receive a **project grade of zero**, regardless of the team's overall output.
 
-This means the repository itself is part of your grade — not just the code inside it.
+This means the repository itself is part of your grade: not just the code inside it.
 
 ---
 
 ## 2. Step-by-Step: Initiating the Repository
 
 1. **Create the repository**
-   - One member creates a **new GitHub repository** (public or private — private is fine, just add your instructor as a collaborator).
+   - One member creates a **new GitHub repository** (public or private - private is fine, just add your instructor as a collaborator).
    - Repository name convention: `LBYCPOB-FinalProject-<ShortProjectName>` (adjust prefix to your actual course code).
 
 2. **Add all team members as collaborators**
    - Settings → Collaborators → Add each member by GitHub username.
-   - Every member must have **push access** — no single-owner workflows where one person commits on behalf of others.
+   - Every member must have **push access** - no single-owner workflows where one person commits on behalf of others.
 
 3. **Initialize with the essentials**
-   - `README.txt` (proposal — see Section 3 below)
+   - `README.txt` (proposal - see Section 3 below)
    - `.gitignore` (appropriate for your language/framework, e.g., Java/Maven, Python, Node)
    - `LICENSE` (optional, but good practice for "original work" framing)
 
@@ -43,7 +43,7 @@ This means the repository itself is part of your grade — not just the code ins
 
 6. **Use GitHub Issues or a Projects board**
    - Log tasks/features as Issues, assign them to members, and close them via linked commits/PRs.
-   - This creates a visible paper trail of who did what — directly supporting the contribution-based grading policy.
+   - This creates a visible paper trail of who did what - directly supporting the contribution-based grading policy.
 
 7. **Commit early, commit often, individually**
    - Each member should have commits under their **own GitHub account** from the first week onward.
@@ -82,11 +82,9 @@ Your `README.txt` (placed at the root of the repo) is your **project proposal**.
 
 7. **Initial Class Ideas**
    Identify your main classes (the "nouns" of your problem domain) and their basic responsibilities, e.g.:
-   - `InventoryItem` — holds product data, stock level
-   - `Order` — aggregates items, computes totals
-   - `User` — authentication and role management
-
-### Recommended Additions (Strengthen Your Proposal)
+   - `InventoryItem` - holds product data, stock level
+   - `Order` - aggregates items, computes totals
+   - `User` - authentication and role management
 
 8. **User Stories**
    Short feature descriptions from the end-user's perspective:
