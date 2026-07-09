@@ -97,7 +97,7 @@ Your `README.md` (placed at the root of the repo) is your **project proposal**. 
 
 ---
 
-## 4. README.txt Template
+## 4. README.md Template
 
 ```
 PROJECT TITLE:
