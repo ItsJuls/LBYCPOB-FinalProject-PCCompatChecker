@@ -12,7 +12,7 @@ public class App extends Application {
     public void start(Stage stage) {
         Label welcomeLabel = new Label("PC Compat Checker");
         StackPane root = new StackPane(welcomeLabel);
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 1000, 800);
 
         stage.setTitle("PC Compat Checker");
         stage.setScene(scene);
