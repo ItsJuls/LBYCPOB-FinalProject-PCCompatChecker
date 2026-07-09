@@ -153,4 +153,4 @@ CORE FEATURES (Recommended):
 
 ## Example Picture:
 
-![Test Image](https://github.com/melvincabatuan/LBYCPOB-FinalProject-ShortProjectName/blob/master/images/logo.png)
+![Test Image](https://github.com/melvincabatuan/LBYCPOB-FinalProject-ShortProjectName/blob/master/images/logo.png?raw=true)
