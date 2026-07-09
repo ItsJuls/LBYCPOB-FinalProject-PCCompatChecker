@@ -1,6 +1,6 @@
 # Final Project: GitHub Repository Initiation Guidelines
 
-These guidelines walk your team (or you, if going solo) through **setting up your Final Project GitHub repository correctly from day one**, and specify exactly what your `README.txt` proposal must contain. Follow this before writing a single line of application code.
+These guidelines walk your team (or you, if going solo) through **setting up your Final Project GitHub repository correctly from day one**, and specify exactly what your `README.md` proposal must contain. Follow this before writing a single line of application code.
 
 ---
 
