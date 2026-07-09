@@ -27,7 +27,7 @@ This means the repository itself is part of your grade: not just the code inside
    - Every member must have **push access** - no single-owner workflows where one person commits on behalf of others.
 
 3. **Initialize with the essentials**
-   - `README.txt` (proposal - see Section 3 below)
+   - `README.md` (proposal - see Section 3 below)
    - `.gitignore` (appropriate for your language/framework, e.g., Java/Maven, Python, Node)
    - `LICENSE` (optional, but good practice for "original work" framing)
 
@@ -51,9 +51,9 @@ This means the repository itself is part of your grade: not just the code inside
 
 ---
 
-## 3. `README.txt`: Required Proposal Elements
+## 3. `README.md`: Required Proposal Elements
 
-Your `README.txt` (placed at the root of the repo) is your **project proposal**. It must contain the following, in order:
+Your `README.md` (placed at the root of the repo) is your **project proposal**. It must contain the following, in order:
 
 ### Required Sections
 
