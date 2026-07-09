@@ -153,4 +153,4 @@ CORE FEATURES (Recommended):
 
 ## Example Picture:
 
-![Example README.txt](https://i.imgur.com/2222222.png)
+![Test Image](https://github.com/melvincabatuan/LBYCPOB-FinalProject-ShortProjectName/blob/master/images/logo.png)
