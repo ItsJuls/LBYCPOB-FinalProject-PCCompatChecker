@@ -1,5 +1,5 @@
 1. **Project Title**
-   PC Parts Compatibility Checker
+   > PC Parts Compatibility Checker
 
 3. **Team Members**
    Jules B. Bautista
