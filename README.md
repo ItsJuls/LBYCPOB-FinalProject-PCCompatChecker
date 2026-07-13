@@ -1,20 +1,20 @@
 1. **Project Title**
-   > PC Parts Compatibility Checker
+   - PC Parts Compatibility Checker
 
 3. **Team Members**
-   Jules B. Bautista
-   Gabrielle C. Querijero
+   - Jules B. Bautista
+   - Gabrielle C. Querijero
 
-4. **Problem Statement & Goals**
-   Building custom PC requires that all hardware components are compatible with one another. Beginners and even experienced builders may accidentally use parts that do not work together. Processors have their own sockets and power supplies should have an allowance to support the total power requirement of the PC.
+5. **Problem Statement & Goals**
+   - Building custom PC requires that all hardware components are compatible with one another. Beginners and even experienced builders may accidentally use parts that do not work together. Processors have their own sockets and power supplies should have an allowance to support the total power requirement of the PC.
 
-   The goal of this application is to simplify the PC building process by allowing users to freely choose their own components and verify their compatibility. The system would also estimate the total cost and power consumption of the build.
+   - The goal of this application is to simplify the PC building process by allowing users to freely choose their own components and verify their compatibility. The system would also estimate the total cost and power consumption of the build.
 
 6. **Target User**
-   The primary users of the application are first time PC builders, gamers, computer engineering students, and computer retail shops that assist costumers in creating their own PC build.
+   - The primary users of the application are first time PC builders, gamers, computer engineering students, and computer retail shops that assist costumers in creating their own PC build.
 
 7. **Brief Description**
-   The PC part compatibility checker is a desktop application that allows user to freely choose and create their own computer build by selecting components such as the processor, motherboard, graphics card, RAM, storage, and many other components. As the components are selected the application verifies wheter they are compatible based on the specification of the component. The application also computes for the estimated total cost and power consumption, then generates a report where the user will see the compatibility report and suggestions on the build before the user finalizes.
+   - The PC part compatibility checker is a desktop application that allows user to freely choose and create their own computer build by selecting components such as the processor, motherboard, graphics card, RAM, storage, and many other components. As the components are selected the application verifies wheter they are compatible based on the specification of the component. The application also computes for the estimated total cost and power consumption, then generates a report where the user will see the compatibility report and suggestions on the build before the user finalizes.
 
 8. **Core OOP Concepts**
    - Encapsulation - 
