@@ -1,90 +1,40 @@
-# Final Project: GitHub Repository Initiation Guidelines
-
-These guidelines walk your team (or you, if going solo) through **setting up your Final Project GitHub repository correctly from day one**, and specify exactly what your `README.md` proposal must contain. Follow this before writing a single line of application code.
-
----
-
-## 1. Why This Matters
-
-Per the Final Project Policy:
-- Your project must solve a **real-world problem** and be **creative, original work**.
-- It must be **functional** and demonstrate **core OOP concepts, code conventions, and GUI design**.
-- Groups are **at most 3 members** (solo is allowed).
-- **If working in a group, contributions are evaluated based on GitHub activity.** Members with no visible contribution (commits, PRs, issues, etc.) will receive a **project grade of zero**, regardless of the team's overall output.
-
-This means the repository itself is part of your grade: not just the code inside it.
-
----
-
-## 2. Step-by-Step: Initiating the Repository
-
-1. **Create the repository**
-   - One member creates a **new GitHub repository** (public or private -- private is fine, just add your instructor as a collaborator).
-   - Repository name convention: `LBYCPOB-FinalProject-<ShortProjectName>` (adjust prefix to your actual course code).
-
-2. **Add all team members as collaborators**
-   - Settings → Collaborators → Add each member by GitHub username.
-   - Every member must have **push access** - no single-owner workflows where one person commits on behalf of others.
-
-3. **Initialize with the essentials**
-   - `README.md` (proposal - see Section 3 below)
-   - `.gitignore` (appropriate for your language/framework, e.g., Java/Maven, Python, Node)
-   - `LICENSE` (optional, but good practice for "original work" framing)
-
-4. **Set up branching from the start**
-   - `main` branch stays stable/working at all times.
-   - Each member works in **feature branches** (`feature/login-ui`, `feature/inventory-class`, etc.) and merges via **Pull Requests**.
-   - This is what makes individual contributions visible and attributable.
-
-5. **Adopt a commit convention immediately**
-   - Write descriptive commit messages tied to what changed and why, e.g.:
-     `Add Encapsulation to Account class; hide balance field behind getters/setters`
-   - Avoid vague messages like `update`, `fix`, `final`.
-
-6. **Use GitHub Issues or a Projects board**
-   - Log tasks/features as Issues, assign them to members, and close them via linked commits/PRs.
-   - This creates a visible paper trail of who did what - directly supporting the contribution-based grading policy.
-
-7. **Commit early, commit often, individually**
-   - Each member should have commits under their **own GitHub account** from the first week onward.
-   - Irregular, one-time, end-of-term commit dumps are a red flag during evaluation and will not be treated as genuine contribution.
-
----
-
-## 3. `README.md`: Required Proposal Elements
-
-Your `README.md` (placed at the root of the repo) is your **project proposal**. It must contain the following, in order:
-
-### Required Sections
-
 1. **Project Title**
-   A clear, descriptive name for your project.
+   PC Parts Compatibility Checker
 
 2. **Team Members**
-   Full names and GitHub usernames of all members (or "Solo Project" with your name).
+   Jules B. Bautista
+   Gabrielle C. Querijero
 
-3. **Problem Statement & Goals**
-   - What real-world problem are you solving?
-   - What are the main objectives of your application?
+4. **Problem Statement & Goals**
+   Building custom PC requires that all hardware components are compatible with one another. Beginners and even experienced builders may accidentally use parts that do not work together. Processors have their own sockets and power supplies should have an allowance to support the total power requirement of the PC.
 
-4. **Target User**
-   Who will actually use this system? Be specific (e.g., "small sari-sari store owners," "university lab instructors," not just "people").
+   The goal of this application is to simplify the PC building process by allowing users to freely choose their own components and verify their compatibility. The system would also estimate the total cost and power consumption of the build.
 
-5. **Brief Description**
-   A short paragraph summarizing the project's purpose and basic functionality - what it does, end to end.
+6. **Target User**
+   The primary users of the application are first time PC builders, gamers, computer engineering students, and computer retail shops that assist costumers in creating their own PC build.
 
-6. **Core OOP Concepts**
-   List the OOP principles you intend to apply and *where* they'll show up, e.g.:
-   - Encapsulation - private fields with controlled access in `Account`
-   - Inheritance - `Employee` → `Manager`, `Cashier`
-   - Polymorphism - overridden `calculatePay()` per employee type
-   - Abstraction - `PaymentMethod` interface implemented by `CashPayment`, `GCashPayment`
+7. **Brief Description**
+   The PC part compatibility checker is a desktop application that allows user to freely choose and create their own computer build by selecting components such as the processor, motherboard, graphics card, RAM, storage, and many other components. As the components are selected the application verifies wheter they are compatible based on the specification of the component. The application also computes for the estimated total cost and power consumption, then generates a report where the user will see the compatibility report and suggestions on the build before the user finalizes.
 
-7. **Initial Class Ideas**
-   Identify your main classes (the "nouns" of your problem domain) and their basic responsibilities, e.g.:
-   - `InventoryItem` - holds product data, stock level
-   - `Order` - aggregates items, computes totals
-   - `User` - authentication and role management
+8. **Core OOP Concepts**
+   - Encapsulation - 
+   - Inheritance - 
+   - Polymorphism - 
+   - Abstraction - 
+
+9. **Initial Class Ideas**
+   - `Component` - Base class containing model, brand, price, and power consumption
+   - `Processor` - Stores socket type, core count, thermal design power (TDP).
+   - `Motherboard` - Stores socket type, chipset, RAM support, and form factor.
+   - `RAM` - Memory module that includes capacity, speed, CAS (Column Address Strobe) Latency (CL)
+   - `GraphicsCard` - Stores VRAM, power requirements
+   - `Storage` - Represents storage devices such as SSDs and HDDs with capacity and speed information
+   - `Power Supply` - Contains wattage, efficiency rating, and power-relating specifications
+   - `Case` - Stores compatible motherboard form factor and physical dimensions
+   - `Build` - Maintains the collection of all components selected and calculates total price and estimated power consumption
+   - `CompatibilityChecker` - Validates if components are compatible and generates report identifying any conflicts and suggestions.
+
+   
 
 ### Recommended Additions (Strengthen Your Proposal)
 
