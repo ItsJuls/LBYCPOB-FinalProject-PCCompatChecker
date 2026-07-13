@@ -1,7 +1,7 @@
 1. **Project Title**
    PC Parts Compatibility Checker
 
-2. **Team Members**
+3. **Team Members**
    Jules B. Bautista
    Gabrielle C. Querijero
 
