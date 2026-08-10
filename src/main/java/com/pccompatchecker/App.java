@@ -18,8 +18,8 @@ public class App extends Application {
 
         Scene scene = new Scene(
                 root,
-                screenBounds.getWidth(),
-                screenBounds.getHeight()
+                screenBounds.getWidth() * 0.9,
+                screenBounds.getHeight() * 0.9
         );
 
         stage.setTitle("PC Compat Checker");
