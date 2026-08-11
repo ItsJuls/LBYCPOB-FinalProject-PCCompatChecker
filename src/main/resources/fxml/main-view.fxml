@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pccompatchecker.controller.MainController">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="15" prefWidth="180">
+
+            <Label text="BUILD"/>
+
+            <Button text="Dashboard"/>
+            <Button text="PC Builder"/>
+            <Button text="Compatibility"/>
+            <Button text="Summary"/>
+
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <VBox spacing="15">
+
+            <Label text="PC BUILDER"/>
+
+            <Label text="CPU"/>
+            <ComboBox promptText="Select CPU"/>
+
+            <Label text="Motherboard"/>
+            <ComboBox promptText="Select Motherboard"/>
+
+            <Label text="RAM"/>
+            <ComboBox promptText="Select RAM"/>
+
+            <Label text="GPU"/>
+            <ComboBox promptText="Select GPU"/>
+
+            <Label text="Storage"/>
+            <ComboBox promptText="Select Storage"/>
+
+            <Label text="Budget"/>
+
+            <Slider min="0"
+                    max="5000"
+                    value="1000"/>
+
+            <Button text="Check Compatibility"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
