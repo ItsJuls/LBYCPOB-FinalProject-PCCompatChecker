@@ -10,6 +10,7 @@ public abstract class Component {
     public Component(String name, Double price){
         this.name = name;
         this.price = Optional.ofNullable(price);
+        this.brand = name != null ? name.split(" ")[0] : "Unknown";
     }
 
     public String getName() {
