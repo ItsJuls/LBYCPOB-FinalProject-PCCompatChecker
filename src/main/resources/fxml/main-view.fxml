@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<!--AnchorPane is being used as our main canvas.-->
+<!--This makes it easier to position controls manually-->
+<!--in Scene Builder while we are designing the UI.-->
+
+<AnchorPane prefHeight="700.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pccompatchecker.controller.MainController">
+
+    <Label layoutX="294.0" layoutY="43.0" text="PC COMPATIBILITY CHECKER" />
+
+    <Label layoutX="37.0" layoutY="92.0" text="BUILD" />
+
+    <Button layoutX="27.0" layoutY="132.0" text="Dashboard" />
+
+    <Button layoutX="27.0" layoutY="182.0" text="PC Builder" />
+
+    <Button layoutX="27.0" layoutY="232.0" text="Compatibility" />
+
+    <Button layoutX="27.0" layoutY="282.0" text="Summary" />
+
+
+
+    <Label layoutX="248.0" layoutY="92.0" text="PC BUILDER" />
+
+    <Label layoutX="248.0" layoutY="142.0" text="CPU" />
+
+    <ComboBox layoutX="248.0" layoutY="167.0" prefWidth="400.0" promptText="Select CPU" />
+
+    <Label layoutX="248.0" layoutY="222.0" text="Motherboard" />
+
+    <ComboBox layoutX="248.0" layoutY="247.0" prefWidth="400.0" promptText="Select Motherboard" />
+
+    <Label layoutX="248.0" layoutY="302.0" text="RAM" />
+
+    <ComboBox layoutX="248.0" layoutY="327.0" prefWidth="400.0" promptText="Select RAM" />
+
+    <Label layoutX="248.0" layoutY="382.0" text="GPU" />
+
+    <ComboBox layoutX="248.0" layoutY="407.0" prefWidth="400.0" promptText="Select GPU" />
+
+    <Label layoutX="248.0" layoutY="462.0" text="Budget" />
+
+    <Slider layoutX="248.0" layoutY="492.0" max="5000" min="0" prefWidth="400.0" value="1000" />
+
+    <Button layoutX="348.0" layoutY="552.0" text="Check Compatibility" />
+   <Line endX="11.0" endY="472.29290771484375" layoutX="161.0" layoutY="232.0" startX="11.0" startY="-232.0" />
+
+</AnchorPane>
