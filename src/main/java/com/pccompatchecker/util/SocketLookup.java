@@ -35,10 +35,10 @@ public class SocketLookup {
         SOCKET_MAP.put("Haswell", "LGA1150");
         SOCKET_MAP.put("Haswell Refresh", "LGA1150");
         SOCKET_MAP.put("Broadwell", "LGA1150");      // note: -E variant used LGA2011-3
-        SOCKET_MAP.put("Skylake", "LGA1151");        // note: Skylake-X variant used LGA2066
-        SOCKET_MAP.put("Kaby Lake", "LGA1151");
-        SOCKET_MAP.put("Coffee Lake", "LGA1151");
-        SOCKET_MAP.put("Coffee Lake Refresh", "LGA1151");
+        SOCKET_MAP.put("Skylake", "LGA1151-v1");
+        SOCKET_MAP.put("Kaby Lake", "LGA1151-v1");
+        SOCKET_MAP.put("Coffee Lake", "LGA1151-v2");
+        SOCKET_MAP.put("Coffee Lake Refresh", "LGA1151-v2");
         SOCKET_MAP.put("Cascade Lake", "LGA2066");
         SOCKET_MAP.put("Comet Lake", "LGA1200");
         SOCKET_MAP.put("Rocket Lake", "LGA1200");

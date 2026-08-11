@@ -5,6 +5,7 @@ import com.pccompatchecker.Compatibility.CompatibilityResult;
 import com.pccompatchecker.Compatibility.CompatibilityRule;
 import com.pccompatchecker.Components.CPU;
 import com.pccompatchecker.Components.Motherboard;
+import com.pccompatchecker.util.ChipsetGenerationLookup;
 
 import java.util.Optional;
 
@@ -24,7 +25,9 @@ public class SocketCompatibilityRule implements CompatibilityRule {
         }
 
         String cpuSocket = cpu.get().getSocket();
-        String moboSocket = motherboard.get().getSocket();
+        String moboSocket = ChipsetGenerationLookup.resolveSocket(
+                motherboard.get().getSocket(), motherboard.get().getName()
+        );
 
         if (cpuSocket.equals("Unknown")) {
             return new CompatibilityResult(
