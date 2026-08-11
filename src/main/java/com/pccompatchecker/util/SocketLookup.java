@@ -1,4 +1,4 @@
-package com.pccompatchecker.Utility;
+package com.pccompatchecker.util;
 
 import java.util.HashMap;
 import java.util.Map;

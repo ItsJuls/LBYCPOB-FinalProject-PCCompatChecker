@@ -1,7 +1,7 @@
 package com.pccompatchecker.Components;
 
 
-import com.pccompatchecker.Utility.SocketLookup;
+import com.pccompatchecker.util.SocketLookup;
 
 public class CPU extends Component {
     private final int coreCount;
