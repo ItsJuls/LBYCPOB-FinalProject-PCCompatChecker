@@ -7,7 +7,7 @@ public class GPU extends Component {
     private final Double coreClock;
     private final Double boostClock;
     private final Double length;
-    private final String color;     
+    private final String color;
 
     public GPU(String name, Double price, String chipset, int memory,
                Double coreClock, Double boostClock, Double length, String color) {
