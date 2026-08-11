@@ -1,29 +1,31 @@
 package com.pccompatchecker;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
+        Label welcomeLabel = new Label("PC Compat Checker");
+        StackPane root = new StackPane(welcomeLabel);
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
-        //is responsible for reading and loading FXML file
-        FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/fxml/main-view.fxml")
+        Scene scene = new Scene(
+                root,
+                screenBounds.getWidth() * 0.9,
+                screenBounds.getHeight() * 0.9
         );
 
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root, 1000, 700);
-
-        stage.setTitle("PC Compatibility Checker");
+        stage.setTitle("PC Compat Checker");
         stage.setScene(scene);
+        stage.setResizable(true);
+        stage.centerOnScreen();
         stage.show();
     }
 
