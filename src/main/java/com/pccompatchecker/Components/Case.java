@@ -1,5 +1,8 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Case extends Component {
 
     private final String type;              // e.g. "ATX Mid Tower"
@@ -9,8 +12,17 @@ public class Case extends Component {
     private final Integer internal35Bays;    // nullable
     private final String color;              // nullable
 
-    public Case(String name, Double price, String type, Integer bundledPsuWattage,
-                String sidePanel, Double externalVolume, Integer internal35Bays, String color) {
+    @JsonCreator
+    public Case(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("type") String type,
+            @JsonProperty("psu") Integer bundledPsuWattage,
+            @JsonProperty("side_panel") String sidePanel,
+            @JsonProperty("external_volume") Double externalVolume,
+            @JsonProperty("internal_35_bays") Integer internal35Bays,
+            @JsonProperty("color") String color
+    ) {
         super(name, price);
         this.type = type;
         this.bundledPsuWattage = bundledPsuWattage;

@@ -1,5 +1,8 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CPUCooler extends Component {
 
     private final int rpm;
@@ -7,8 +10,15 @@ public class CPUCooler extends Component {
     private final String color;
     private final Integer size; // null = air cooler, otherwise AIO radiator size in mm
 
-    public CPUCooler(String name, Double price, int rpm, Double noiseLevel,
-                     String color, Integer size) {
+    @JsonCreator
+    public CPUCooler(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("rpm") int rpm,
+            @JsonProperty("noise_level") Double noiseLevel,
+            @JsonProperty("color") String color,
+            @JsonProperty("size") Integer size
+    ) {
         super(name, price);
         this.rpm = rpm;
         this.noiseLevel = noiseLevel;

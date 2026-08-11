@@ -12,7 +12,8 @@ import java.util.List;
 
 public class JsonlLoader {
 
-    private static final ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper mapper = new ObjectMapper()
+            .configure(com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     /**
      * Reads a jsonl resource file (one JSON object per line) from the classpath

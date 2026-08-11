@@ -1,5 +1,8 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Motherboard extends Component {
     private final String socket;
     private final String formFactor;
@@ -7,8 +10,16 @@ public class Motherboard extends Component {
     private final Integer memorySlots;
     private final String color;
 
-    public Motherboard(String name, Double price, String socket, String formFactor,
-                       Integer maxMemory, Integer memorySlots, String color) {
+    @JsonCreator
+    public Motherboard(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("socket") String socket,
+            @JsonProperty("form_factor") String formFactor,
+            @JsonProperty("max_memory") Integer maxMemory,
+            @JsonProperty("memory_slots") Integer memorySlots,
+            @JsonProperty("color") String color
+    ) {
         super(name, price);
         this.socket = socket;
         this.formFactor = formFactor;

@@ -1,5 +1,7 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class PSU extends Component {
@@ -13,8 +15,18 @@ public class PSU extends Component {
     private final int tierRank;
     private final boolean limitedConfidence;
 
-    public PSU(String name, Double price, String type, String efficiency, int wattage,
-               String color, String tier, int tierRank, boolean limitedConfidence) {
+    @JsonCreator
+    public PSU(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("type") String type,
+            @JsonProperty("efficiency") String efficiency,
+            @JsonProperty("wattage") int wattage,
+            @JsonProperty("color") String color,
+            @JsonProperty("tier") String tier,
+            @JsonProperty("tier_rank") int tierRank,
+            @JsonProperty("limited_confidence") boolean limitedConfidence
+    ) {
         super(name, price);
         this.type = type;
         this.efficiency = efficiency;
@@ -24,6 +36,7 @@ public class PSU extends Component {
         this.tierRank = tierRank;
         this.limitedConfidence = limitedConfidence;
     }
+
 
     @JsonSetter("modular")
     public void setModular(Object raw) {

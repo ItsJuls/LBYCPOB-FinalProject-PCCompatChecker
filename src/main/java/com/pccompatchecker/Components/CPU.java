@@ -1,6 +1,8 @@
 package com.pccompatchecker.Components;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pccompatchecker.util.SocketLookup;
 
 public class CPU extends Component {
@@ -12,8 +14,17 @@ public class CPU extends Component {
     private final String graphics; // nullable - null means no integrated graphics
     private final String socket; // derived, not in the raw jsonl
 
-    public CPU(String name, Double price, int coreCount, double coreClock,
-               double boostClock, double tdp, String microarchitecture, String graphics) {
+    @JsonCreator
+    public CPU(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("core_count") int coreCount,
+            @JsonProperty("core_clock") double coreClock,
+            @JsonProperty("boost_clock") double boostClock,
+            @JsonProperty("tdp") double tdp,
+            @JsonProperty("microarchitecture") String microarchitecture,
+            @JsonProperty("graphics") String graphics
+    ) {
         super(name, price);
         this.coreCount = coreCount;
         this.coreClock = coreClock;
@@ -23,7 +34,6 @@ public class CPU extends Component {
         this.graphics = graphics;
         this.socket = SocketLookup.getSocketFor(microarchitecture);
     }
-
     public int getCoreCount() { return coreCount; }
     public double getCoreClock() { return coreClock; }
     public double getBoostClock() { return boostClock; }

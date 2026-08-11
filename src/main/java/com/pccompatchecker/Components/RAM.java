@@ -1,5 +1,8 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class RAM extends Component {
 
     private final int[] speed;
@@ -10,8 +13,17 @@ public class RAM extends Component {
     private final String color;
     private final boolean rgb;
 
-    public RAM(String name, Double price, int[] speed, int[] modules,
-               int casLatency, int firstWordLatency, Double pricePerGb, String color) {
+    @JsonCreator
+    public RAM(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("speed") int[] speed,
+            @JsonProperty("modules") int[] modules,
+            @JsonProperty("cas_latency") int casLatency,
+            @JsonProperty("first_word_latency") int firstWordLatency,
+            @JsonProperty("price_per_gb") Double pricePerGb,
+            @JsonProperty("color") String color
+    ) {
         super(name, price);
         this.speed = speed;
         this.modules = modules;
@@ -19,7 +31,7 @@ public class RAM extends Component {
         this.firstWordLatency = firstWordLatency;
         this.pricePerGb = pricePerGb;
         this.color = color;
-        this.rgb = name.toUpperCase().contains("RGB");
+        this.rgb = name != null && name.toUpperCase().contains("RGB");
     }
 
     public int getGeneration() {

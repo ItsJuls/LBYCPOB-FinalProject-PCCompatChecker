@@ -1,5 +1,7 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class Storage extends Component {
@@ -11,8 +13,16 @@ public class Storage extends Component {
     private final Double pricePerGb;
     private String driveType; // "SSD" or e.g. "HDD (7200 RPM)"
 
-    public Storage(String name, Double price, int capacity, String formFactor,
-                   String interfaceType, Integer cache, Double pricePerGb) {
+    @JsonCreator
+    public Storage(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("capacity") int capacity,
+            @JsonProperty("form_factor") String formFactor,
+            @JsonProperty("interface") String interfaceType,
+            @JsonProperty("cache") Integer cache,
+            @JsonProperty("price_per_gb") Double pricePerGb
+    ) {
         super(name, price);
         this.capacity = capacity;
         this.formFactor = formFactor;

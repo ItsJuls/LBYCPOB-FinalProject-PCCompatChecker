@@ -1,5 +1,8 @@
 package com.pccompatchecker.Components;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class GPU extends Component {
 
     private final String chipset;
@@ -9,8 +12,17 @@ public class GPU extends Component {
     private final Double length;
     private final String color;
 
-    public GPU(String name, Double price, String chipset, int memory,
-               Double coreClock, Double boostClock, Double length, String color) {
+    @JsonCreator
+    public GPU(
+            @JsonProperty("name") String name,
+            @JsonProperty("price") Double price,
+            @JsonProperty("chipset") String chipset,
+            @JsonProperty("memory") int memory,
+            @JsonProperty("core_clock") Double coreClock,
+            @JsonProperty("boost_clock") Double boostClock,
+            @JsonProperty("length") Double length,
+            @JsonProperty("color") String color
+    ) {
         super(name, price);
         this.chipset = chipset;
         this.memory = memory;
