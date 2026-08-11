@@ -24,8 +24,8 @@ public abstract class Component {
         return brand;
     }
 
-    abstract String getCategory();
-    abstract String getSpecSummary();
+    public abstract String getCategory();
+    public abstract String getSpecSummary();
 
     @Override
     public String toString() {
