@@ -1,5 +1,6 @@
 package com.pccompatchecker.Compatibility;
 
+import com.pccompatchecker.Compatibility.rules.*;
 import com.pccompatchecker.build.Build;
 
 import java.util.ArrayList;
@@ -10,10 +11,11 @@ public class CompatibilityChecker {
     private final List<CompatibilityRule> rules = new ArrayList<>();
 
     public CompatibilityChecker() {
-        rules.add(new com.pccompatchecker.Compatibility.rules.SocketCompatibilityRule());
-        rules.add(new com.pccompatchecker.Compatibility.rules.FormFactorRule());
-        rules.add(new com.pccompatchecker.Compatibility.rules.RamCapacityRule());
-        rules.add(new com.pccompatchecker.Compatibility.rules.CoolerSocketRule());
+        rules.add(new SocketCompatibilityRule());
+        rules.add(new FormFactorRule());
+        rules.add(new RamCapacityRule());
+        rules.add(new CoolerSocketRule());
+        rules.add(new RamGenerationRule());
     }
 
     public List<CompatibilityResult> runAll(Build build) {
