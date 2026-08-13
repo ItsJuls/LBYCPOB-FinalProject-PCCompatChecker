@@ -55,21 +55,24 @@
     <!-- CPU Cooler -->
     <Label layoutX="300.0" layoutY="550.0" text="CPU Cooler" />
 
-    <ComboBox fx:id="coolerCBox"
-              layoutX="300.0"
-              layoutY="575.0"
-              prefWidth="400.0"
-              promptText="Select CPU Cooler" />
+    <ComboBox fx:id="coolerCBox" layoutX="300.0" layoutY="575.0" prefWidth="400.0" promptText="Select CPU Cooler" />
+
+    <!-- PSU -->
+    <Label layoutX="300.0" layoutY="630.0" text="PSU" />
+
+    <ComboBox fx:id="psuCBox" layoutX="300.0" layoutY="655.0" prefWidth="400.0" promptText="Select PSU" />
+
+    <!-- Case -->
+    <Label layoutX="750.0" layoutY="550.0" text="Case" />
+
+    <ComboBox fx:id="caseCBox" layoutX="750.0" layoutY="575.0" prefWidth="250.0" promptText="Select Case" />
 
     <!-- Budget -->
     <Label layoutX="750.0" layoutY="150.0" text="Budget" />
 
     <Slider fx:id="budgetSlider" layoutX="750.0" layoutY="180.0" max="500000" min="0" prefWidth="250.0" value="25000" />
 
-    <Label fx:id="budgetValueLabel"
-           layoutX="750.0"
-           layoutY="210.0"
-           text="₱25,000"/>
+    <Label fx:id="budgetValueLabel" layoutX="750.0" layoutY="210.0" text="₱25,000"/>
 
     <!-- Compatibility -->
     <Button fx:id="compatibilityButton" layoutX="750.0" layoutY="250.0" onAction="#compatibilityCheck" text="Check Compatibility" />
