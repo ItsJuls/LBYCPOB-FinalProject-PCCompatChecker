@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.event.ActionEvent;
 
 public class MainController {
 
@@ -30,6 +31,21 @@ public class MainController {
 
     @FXML
     private Label budgetValueLabel;
+
+    @FXML
+    private void compatibilityCheck(ActionEvent event) {
+        CPU selectedCPU = cpuCBox.getValue();
+        Motherboard selectedMotherboard = moboCBox.getValue();
+        RAM selectedRAM = ramCBox.getValue();
+        GPU selectedGPU = gpuCBox.getValue();
+        Storage selectedStorage = storageCBox.getValue();
+
+        System.out.println("CPU: " + selectedCPU);
+        System.out.println("Motherboard: " + selectedMotherboard);
+        System.out.println("RAM: " + selectedRAM);
+        System.out.println("GPU: " + selectedGPU);
+        System.out.println("Storage: " + selectedStorage);
+    }
 
     // Loads component data from the JSONL files
     private final ComponentRepository repository = new ComponentRepository();

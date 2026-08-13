@@ -63,7 +63,7 @@
            text="₱25,000"/>
 
     <!-- Compatibility -->
-    <Button fx:id="compatibilityButton" layoutX="750.0" layoutY="250.0" text="Check Compatibility" />
+    <Button fx:id="compatibilityButton" layoutX="750.0" layoutY="250.0" onAction="#compatibilityCheck" text="Check Compatibility" />
 
    <Line endX="11.0" endY="472.29290771484375" layoutX="161.0" layoutY="232.0" startX="11.0" startY="-232.0" strokeWidth="3.0" />
 
