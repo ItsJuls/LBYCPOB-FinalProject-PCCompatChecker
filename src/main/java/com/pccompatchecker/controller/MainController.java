@@ -5,6 +5,8 @@ import com.pccompatchecker.Components.GPU;
 import com.pccompatchecker.Components.Motherboard;
 import com.pccompatchecker.Components.RAM;
 import com.pccompatchecker.Components.Storage;
+import com.pccompatchecker.Components.PSU;
+import com.pccompatchecker.Components.Case;
 
 import com.pccompatchecker.Compatibility.CompatibilityChecker;
 import com.pccompatchecker.Compatibility.CompatibilityResult;
@@ -48,6 +50,12 @@ public class MainController {
     private Label budgetValueLabel;
 
     @FXML
+    private ComboBox<PSU> psuCBox;
+
+    @FXML
+    private ComboBox<Case> caseCBox;
+
+    @FXML
     private void compatibilityCheck(ActionEvent event) {
         // Get the components selected by the user.
         CPU cpu = cpuCBox.getValue();
@@ -56,6 +64,8 @@ public class MainController {
         GPU gpu = gpuCBox.getValue();
         Storage storage = storageCBox.getValue();
         CPUCooler cooler = coolerCBox.getValue();
+        PSU psu = psuCBox.getValue();
+        Case pcCase = caseCBox.getValue();
 
         // Create a Build using the selected components.
         Build build = new Build();
@@ -92,6 +102,8 @@ public class MainController {
         gpuCBox.getItems().addAll(repository.getGpus());
         storageCBox.getItems().addAll(repository.getStorages());
         coolerCBox.getItems().addAll(repository.getCpuCoolers());
+        psuCBox.getItems().addAll(repository.getPsus());
+        caseCBox.getItems().addAll(repository.getCases());
 
         budgetSlider.valueProperty().addListener((obs, oldValue, newValue) -> {
             budgetValueLabel.setText(String.format("₱%,.0f", newValue.doubleValue())
