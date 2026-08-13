@@ -55,7 +55,7 @@
     <!-- Budget -->
     <Label layoutX="750.0" layoutY="150.0" text="Budget" />
 
-    <Slider fx:id="budgetSlider" layoutX="750.0" layoutY="180.0" max="50000" min="0" prefWidth="250.0" value="25000" />
+    <Slider fx:id="budgetSlider" layoutX="750.0" layoutY="180.0" max="500000" min="0" prefWidth="250.0" value="25000" />
 
     <Label fx:id="budgetValueLabel"
            layoutX="750.0"
