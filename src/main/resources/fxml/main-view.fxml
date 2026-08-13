@@ -57,6 +57,11 @@
 
     <Slider fx:id="budgetSlider" layoutX="750.0" layoutY="180.0" max="50000" min="0" prefWidth="250.0" value="25000" />
 
+    <Label fx:id="budgetValueLabel"
+           layoutX="750.0"
+           layoutY="210.0"
+           text="₱25,000"/>
+
     <!-- Compatibility -->
     <Button layoutX="750.0" layoutY="250.0" text="Check Compatibility" />
 

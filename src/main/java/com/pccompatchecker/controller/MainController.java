@@ -4,6 +4,8 @@ import com.pccompatchecker.Components.*;
 import com.pccompatchecker.repository.ComponentRepository;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 
 public class MainController {
 
@@ -23,6 +25,12 @@ public class MainController {
     @FXML
     private ComboBox<Storage> storageCBox;
 
+    @FXML
+    private Slider budgetSlider;
+
+    @FXML
+    private Label budgetValueLabel;
+
     // Loads component data from the JSONL files
     private final ComponentRepository repository = new ComponentRepository();
 
@@ -34,5 +42,9 @@ public class MainController {
         ramCBox.getItems().addAll(repository.getRams());
         gpuCBox.getItems().addAll(repository.getGpus());
         storageCBox.getItems().addAll(repository.getStorages());
+
+        budgetSlider.valueProperty().addListener((obs, oldValue, newValue) -> {
+            budgetValueLabel.setText(String.format("₱%,.0f", newValue.doubleValue()));
+        });
     }
 }
