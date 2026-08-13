@@ -28,8 +28,12 @@ public abstract class Component {
     public abstract String getCategory();
     public abstract String getSpecSummary();
 
+    private static final double USD_TO_PHP = 61.30;
+
+    // USD to PHP
     @Override
     public String toString() {
-        return name + " - $" + price;
+        double phpPrice = price.orElse(0.0) * USD_TO_PHP;
+        return name + " - ₱" + String.format("%,.2f", phpPrice);
     }
 }
