@@ -1,5 +1,17 @@
 package com.pccompatchecker.controller;
 
+import com.pccompatchecker.Components.CPU;
+import com.pccompatchecker.Components.GPU;
+import com.pccompatchecker.Components.Motherboard;
+import com.pccompatchecker.Components.RAM;
+import com.pccompatchecker.Components.Storage;
+
+import com.pccompatchecker.Compatibility.CompatibilityChecker;
+import com.pccompatchecker.Compatibility.CompatibilityResult;
+import com.pccompatchecker.build.Build;
+
+import java.util.List;
+
 import com.pccompatchecker.Components.*;
 import com.pccompatchecker.repository.ComponentRepository;
 import javafx.fxml.FXML;
@@ -34,17 +46,33 @@ public class MainController {
 
     @FXML
     private void compatibilityCheck(ActionEvent event) {
-        CPU selectedCPU = cpuCBox.getValue();
-        Motherboard selectedMotherboard = moboCBox.getValue();
-        RAM selectedRAM = ramCBox.getValue();
-        GPU selectedGPU = gpuCBox.getValue();
-        Storage selectedStorage = storageCBox.getValue();
+        // Get the components selected by the user.
+        CPU cpu = cpuCBox.getValue();
+        Motherboard motherboard = moboCBox.getValue();
+        RAM ram = ramCBox.getValue();
+        GPU gpu = gpuCBox.getValue();
+        Storage storage = storageCBox.getValue();
 
-        System.out.println("CPU: " + selectedCPU);
-        System.out.println("Motherboard: " + selectedMotherboard);
-        System.out.println("RAM: " + selectedRAM);
-        System.out.println("GPU: " + selectedGPU);
-        System.out.println("Storage: " + selectedStorage);
+        // Create a Build using the selected components.
+        Build build = new Build();
+
+        build.setCpu(cpu);
+        build.setMotherboard(motherboard);
+        build.setRam(ram);
+        build.setGpu(gpu);
+        build.setStorage(storage);
+
+        // Run the existing backend compatibility rules.
+        CompatibilityChecker checker = new CompatibilityChecker();
+        List<CompatibilityResult> results = checker.runAll(build);
+
+        // Print the results for testing.
+        for (CompatibilityResult result : results) {
+            System.out.println(
+                    result.getStatus() + ": " +
+                            result.getMessage()
+            );
+        }
     }
 
     // Loads component data from the JSONL files
@@ -60,7 +88,8 @@ public class MainController {
         storageCBox.getItems().addAll(repository.getStorages());
 
         budgetSlider.valueProperty().addListener((obs, oldValue, newValue) -> {
-            budgetValueLabel.setText(String.format("₱%,.0f", newValue.doubleValue()));
+            budgetValueLabel.setText(String.format("₱%,.0f", newValue.doubleValue())
+            );
         });
     }
 }
