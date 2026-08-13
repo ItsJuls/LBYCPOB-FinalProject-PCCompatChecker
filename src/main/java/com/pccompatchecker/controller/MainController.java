@@ -91,9 +91,17 @@ public class MainController {
         resultsTextArea.clear();
 
         for (CompatibilityResult result : results) {
-            System.out.println(result.getStatus() + ": " + result.getMessage());
+            String symbol = switch (result.getStatus()) {
+                case COMPATIBLE -> "✓";
+                case WARNING -> "⚠";
+                case INCOMPATIBLE -> "✗";
+                default -> "•";
+            };
 
-            resultsTextArea.appendText(result.getStatus() + ": " + result.getMessage() + "\n\n");
+            resultsTextArea.appendText(
+                    symbol + " " + result.getStatus() + "\n" +
+                            "  " + result.getMessage() + "\n\n"
+            );
         }
     }
 
