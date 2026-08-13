@@ -39,6 +39,9 @@ public class MainController {
     private ComboBox<Storage> storageCBox;
 
     @FXML
+    private ComboBox<CPUCooler> coolerCBox;
+
+    @FXML
     private Slider budgetSlider;
 
     @FXML
@@ -52,6 +55,7 @@ public class MainController {
         RAM ram = ramCBox.getValue();
         GPU gpu = gpuCBox.getValue();
         Storage storage = storageCBox.getValue();
+        CPUCooler cooler = coolerCBox.getValue();
 
         // Create a Build using the selected components.
         Build build = new Build();
@@ -61,6 +65,7 @@ public class MainController {
         build.setRam(ram);
         build.setGpu(gpu);
         build.setStorage(storage);
+        build.setCpuCooler(cooler);
 
         // Run the existing backend compatibility rules.
         CompatibilityChecker checker = new CompatibilityChecker();
@@ -86,6 +91,7 @@ public class MainController {
         ramCBox.getItems().addAll(repository.getRams());
         gpuCBox.getItems().addAll(repository.getGpus());
         storageCBox.getItems().addAll(repository.getStorages());
+        coolerCBox.getItems().addAll(repository.getCpuCoolers());
 
         budgetSlider.valueProperty().addListener((obs, oldValue, newValue) -> {
             budgetValueLabel.setText(String.format("₱%,.0f", newValue.doubleValue())

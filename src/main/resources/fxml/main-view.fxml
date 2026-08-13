@@ -52,6 +52,15 @@
 
     <ComboBox fx:id="storageCBox" layoutX="300.0" layoutY="495.0" prefWidth="400.0" promptText="Select Storage" />
 
+    <!-- CPU Cooler -->
+    <Label layoutX="300.0" layoutY="550.0" text="CPU Cooler" />
+
+    <ComboBox fx:id="coolerCBox"
+              layoutX="300.0"
+              layoutY="575.0"
+              prefWidth="400.0"
+              promptText="Select CPU Cooler" />
+
     <!-- Budget -->
     <Label layoutX="750.0" layoutY="150.0" text="Budget" />
 
