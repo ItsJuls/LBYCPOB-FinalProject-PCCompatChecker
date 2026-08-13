@@ -13,43 +13,101 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pccompatchecker.controller.MainController">
 
-    <Label layoutX="294.0" layoutY="43.0" text="PC COMPATIBILITY CHECKER" />
+    <Label text="PC COMPATIBILITY CHECKER"
+           layoutX="400.0"
+           layoutY="30.0"/>
 
-    <Label layoutX="37.0" layoutY="92.0" text="BUILD" />
+    <Label text="BUILD"
+           layoutX="40.0"
+           layoutY="100.0"/>
 
-    <Button layoutX="27.0" layoutY="132.0" text="Dashboard" />
+    <Button text="Dashboard"
+            layoutX="30.0"
+            layoutY="140.0"/>
 
-    <Button layoutX="27.0" layoutY="182.0" text="PC Builder" />
+    <Button text="PC Builder"
+            layoutX="30.0"
+            layoutY="190.0"/>
 
-    <Button layoutX="27.0" layoutY="232.0" text="Compatibility" />
+    <Button text="Compatibility"
+            layoutX="30.0"
+            layoutY="240.0"/>
 
-    <Button layoutX="27.0" layoutY="282.0" text="Summary" />
+    <Button text="Summary"
+            layoutX="30.0"
+            layoutY="290.0"/>
 
+    <Label text="PC BUILDER"
+           layoutX="300.0"
+           layoutY="100.0"/>
 
+    <!-- CPU -->
+    <Label text="CPU"
+           layoutX="300.0"
+           layoutY="150.0"/>
 
-    <Label layoutX="248.0" layoutY="92.0" text="PC BUILDER" />
+    <ComboBox promptText="Select CPU"
+              layoutX="300.0"
+              layoutY="175.0"
+              prefWidth="400.0"/>
 
-    <Label layoutX="248.0" layoutY="142.0" text="CPU" />
+    <!-- Motherboard -->
+    <Label text="Motherboard"
+           layoutX="300.0"
+           layoutY="230.0"/>
 
-    <ComboBox layoutX="248.0" layoutY="167.0" prefWidth="400.0" promptText="Select CPU" />
+    <ComboBox promptText="Select Motherboard"
+              layoutX="300.0"
+              layoutY="255.0"
+              prefWidth="400.0"/>
 
-    <Label layoutX="248.0" layoutY="222.0" text="Motherboard" />
+    <!-- RAM -->
+    <Label text="RAM"
+           layoutX="300.0"
+           layoutY="310.0"/>
 
-    <ComboBox layoutX="248.0" layoutY="247.0" prefWidth="400.0" promptText="Select Motherboard" />
+    <ComboBox promptText="Select RAM"
+              layoutX="300.0"
+              layoutY="335.0"
+              prefWidth="400.0"/>
 
-    <Label layoutX="248.0" layoutY="302.0" text="RAM" />
+    <!-- GPU -->
+    <Label text="GPU"
+           layoutX="300.0"
+           layoutY="390.0"/>
 
-    <ComboBox layoutX="248.0" layoutY="327.0" prefWidth="400.0" promptText="Select RAM" />
+    <ComboBox promptText="Select GPU"
+              layoutX="300.0"
+              layoutY="415.0"
+              prefWidth="400.0"/>
 
-    <Label layoutX="248.0" layoutY="382.0" text="GPU" />
+    <!-- Storage -->
+    <Label text="Storage"
+           layoutX="300.0"
+           layoutY="470.0"/>
 
-    <ComboBox layoutX="248.0" layoutY="407.0" prefWidth="400.0" promptText="Select GPU" />
+    <ComboBox promptText="Select Storage"
+              layoutX="300.0"
+              layoutY="495.0"
+              prefWidth="400.0"/>
 
-    <Label layoutX="248.0" layoutY="462.0" text="Budget" />
+    <!-- Budget -->
+    <Label text="Budget"
+           layoutX="750.0"
+           layoutY="150.0"/>
 
-    <Slider layoutX="248.0" layoutY="492.0" max="5000" min="0" prefWidth="400.0" value="1000" />
+    <Slider min="0"
+            max="50000"
+            value="25000"
+            layoutX="750.0"
+            layoutY="180.0"
+            prefWidth="250.0"/>
 
-    <Button layoutX="348.0" layoutY="552.0" text="Check Compatibility" />
+    <!-- Compatibility -->
+    <Button text="Check Compatibility"
+            layoutX="750.0"
+            layoutY="250.0"/>
+
    <Line endX="11.0" endY="472.29290771484375" layoutX="161.0" layoutY="232.0" startX="11.0" startY="-232.0" />
 
 </AnchorPane>
