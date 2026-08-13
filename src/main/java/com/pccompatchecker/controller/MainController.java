@@ -21,6 +21,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.event.ActionEvent;
+import javafx.scene.control.TextArea;
 
 public class MainController {
 
@@ -56,6 +57,9 @@ public class MainController {
     private ComboBox<Case> caseCBox;
 
     @FXML
+    private TextArea resultsTextArea;
+
+    @FXML
     private void compatibilityCheck(ActionEvent event) {
         // Get the components selected by the user.
         CPU cpu = cpuCBox.getValue();
@@ -84,11 +88,12 @@ public class MainController {
         List<CompatibilityResult> results = checker.runAll(build);
 
         // Print the results for testing.
+        resultsTextArea.clear();
+
         for (CompatibilityResult result : results) {
-            System.out.println(
-                    result.getStatus() + ": " +
-                            result.getMessage()
-            );
+            System.out.println(result.getStatus() + ": " + result.getMessage());
+
+            resultsTextArea.appendText(result.getStatus() + ": " + result.getMessage() + "\n\n");
         }
     }
 
