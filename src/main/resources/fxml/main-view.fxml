@@ -13,101 +13,53 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pccompatchecker.controller.MainController">
 
-    <Label text="PC COMPATIBILITY CHECKER"
-           layoutX="400.0"
-           layoutY="30.0"/>
+    <Label layoutX="400.0" layoutY="30.0" text="PC COMPATIBILITY CHECKER" />
 
-    <Label text="BUILD"
-           layoutX="40.0"
-           layoutY="100.0"/>
+    <Label layoutX="40.0" layoutY="100.0" text="BUILD" />
 
-    <Button text="Dashboard"
-            layoutX="30.0"
-            layoutY="140.0"/>
+    <Button layoutX="30.0" layoutY="140.0" text="Dashboard" />
 
-    <Button text="PC Builder"
-            layoutX="30.0"
-            layoutY="190.0"/>
+    <Button layoutX="30.0" layoutY="190.0" text="PC Builder" />
 
-    <Button text="Compatibility"
-            layoutX="30.0"
-            layoutY="240.0"/>
+    <Button layoutX="30.0" layoutY="240.0" text="Compatibility" />
 
-    <Button text="Summary"
-            layoutX="30.0"
-            layoutY="290.0"/>
+    <Button layoutX="30.0" layoutY="290.0" text="Summary" />
 
-    <Label text="PC BUILDER"
-           layoutX="300.0"
-           layoutY="100.0"/>
+    <Label layoutX="300.0" layoutY="100.0" text="PC BUILDER" />
 
     <!-- CPU -->
-    <Label text="CPU"
-           layoutX="300.0"
-           layoutY="150.0"/>
+    <Label layoutX="300.0" layoutY="150.0" text="CPU" />
 
-    <ComboBox promptText="Select CPU"
-              layoutX="300.0"
-              layoutY="175.0"
-              prefWidth="400.0"/>
+    <ComboBox fx:id="cpuCBox" layoutX="300.0" layoutY="175.0" prefWidth="400.0" promptText="Select CPU" />
 
     <!-- Motherboard -->
-    <Label text="Motherboard"
-           layoutX="300.0"
-           layoutY="230.0"/>
+    <Label layoutX="300.0" layoutY="230.0" text="Motherboard" />
 
-    <ComboBox promptText="Select Motherboard"
-              layoutX="300.0"
-              layoutY="255.0"
-              prefWidth="400.0"/>
+    <ComboBox fx:id="moboCBox" layoutX="300.0" layoutY="255.0" prefWidth="400.0" promptText="Select Motherboard" />
 
     <!-- RAM -->
-    <Label text="RAM"
-           layoutX="300.0"
-           layoutY="310.0"/>
+    <Label layoutX="300.0" layoutY="310.0" text="RAM" />
 
-    <ComboBox promptText="Select RAM"
-              layoutX="300.0"
-              layoutY="335.0"
-              prefWidth="400.0"/>
+    <ComboBox fx:id="ramCBox" layoutX="300.0" layoutY="335.0" prefWidth="400.0" promptText="Select RAM" />
 
     <!-- GPU -->
-    <Label text="GPU"
-           layoutX="300.0"
-           layoutY="390.0"/>
+    <Label layoutX="300.0" layoutY="390.0" text="GPU" />
 
-    <ComboBox promptText="Select GPU"
-              layoutX="300.0"
-              layoutY="415.0"
-              prefWidth="400.0"/>
+    <ComboBox fx:id="gpuCBox" layoutX="300.0" layoutY="415.0" prefWidth="400.0" promptText="Select GPU" />
 
     <!-- Storage -->
-    <Label text="Storage"
-           layoutX="300.0"
-           layoutY="470.0"/>
+    <Label layoutX="300.0" layoutY="470.0" text="Storage" />
 
-    <ComboBox promptText="Select Storage"
-              layoutX="300.0"
-              layoutY="495.0"
-              prefWidth="400.0"/>
+    <ComboBox fx:id="storageCBox" layoutX="300.0" layoutY="495.0" prefWidth="400.0" promptText="Select Storage" />
 
     <!-- Budget -->
-    <Label text="Budget"
-           layoutX="750.0"
-           layoutY="150.0"/>
+    <Label layoutX="750.0" layoutY="150.0" text="Budget" />
 
-    <Slider min="0"
-            max="50000"
-            value="25000"
-            layoutX="750.0"
-            layoutY="180.0"
-            prefWidth="250.0"/>
+    <Slider fx:id="budgetSlider" layoutX="750.0" layoutY="180.0" max="50000" min="0" prefWidth="250.0" value="25000" />
 
     <!-- Compatibility -->
-    <Button text="Check Compatibility"
-            layoutX="750.0"
-            layoutY="250.0"/>
+    <Button layoutX="750.0" layoutY="250.0" text="Check Compatibility" />
 
-   <Line endX="11.0" endY="472.29290771484375" layoutX="161.0" layoutY="232.0" startX="11.0" startY="-232.0" />
+   <Line endX="11.0" endY="472.29290771484375" layoutX="161.0" layoutY="232.0" startX="11.0" startY="-232.0" strokeWidth="3.0" />
 
 </AnchorPane>
