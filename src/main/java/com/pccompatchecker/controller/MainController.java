@@ -76,6 +76,8 @@ public class MainController {
         build.setGpu(gpu);
         build.setStorage(storage);
         build.setCpuCooler(cooler);
+        build.setPsu(psu);
+        build.setCase(pcCase);
 
         // Run the existing backend compatibility rules.
         CompatibilityChecker checker = new CompatibilityChecker();
