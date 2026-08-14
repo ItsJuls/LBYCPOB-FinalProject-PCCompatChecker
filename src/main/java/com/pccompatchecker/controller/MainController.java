@@ -17,32 +17,32 @@ import java.util.List;
 import com.pccompatchecker.Components.*;
 import com.pccompatchecker.repository.ComponentRepository;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
+import org.controlsfx.control.SearchableComboBox;
 
 public class MainController {
 
     // PC component dropdowns
     @FXML
-    private ComboBox<CPU> cpuCBox;
+    private SearchableComboBox<CPU> cpuCBox;
 
     @FXML
-    private ComboBox<Motherboard> moboCBox;
+    private SearchableComboBox<Motherboard> moboCBox;
 
     @FXML
-    private ComboBox<RAM> ramCBox;
+    private SearchableComboBox<RAM> ramCBox;
 
     @FXML
-    private ComboBox<GPU> gpuCBox;
+    private SearchableComboBox<GPU> gpuCBox;
 
     @FXML
-    private ComboBox<Storage> storageCBox;
+    private SearchableComboBox<Storage> storageCBox;
 
     @FXML
-    private ComboBox<CPUCooler> coolerCBox;
+    private SearchableComboBox<CPUCooler> coolerCBox;
 
     @FXML
     private Slider budgetSlider;
@@ -51,10 +51,10 @@ public class MainController {
     private Label budgetValueLabel;
 
     @FXML
-    private ComboBox<PSU> psuCBox;
+    private SearchableComboBox<PSU> psuCBox;
 
     @FXML
-    private ComboBox<Case> caseCBox;
+    private SearchableComboBox<Case> caseCBox;
 
     @FXML
     private TextArea resultsTextArea;
