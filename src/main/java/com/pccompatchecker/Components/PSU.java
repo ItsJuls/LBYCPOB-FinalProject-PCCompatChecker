@@ -67,4 +67,19 @@ public class PSU extends Component {
     public String getSpecSummary() {
         return wattage + "W, " + efficiency + ", Tier " + tier + " (" + modular + " Modular)";
     }
+
+    @Override
+    public String toString() {
+        String base = super.toString(); // "<name> - <price/N/A>"
+        int dashIndex = base.indexOf(" - ");
+        String namePart = dashIndex >= 0 ? base.substring(0, dashIndex) : base;
+        String pricePart = dashIndex >= 0 ? base.substring(dashIndex) : "";
+
+        StringBuilder specs = new StringBuilder(wattage + "W");
+        if (efficiency != null && !efficiency.isBlank()) {
+            specs.append(" ").append(efficiency);
+        }
+
+        return namePart + " " + specs + pricePart;
+    }
 }

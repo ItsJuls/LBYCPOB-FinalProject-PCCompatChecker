@@ -59,4 +59,31 @@ public class Storage extends Component {
     public String getSpecSummary() {
         return driveType + ", " + capacity + "GB, " + interfaceType;
     }
+
+    private String formatCapacity() {
+        if (capacity >= 1000) {
+            double tb = capacity / 1000.0;
+            // Show whole numbers as "4TB", fractional as "1.5TB"
+            String tbStr = (tb == Math.floor(tb))
+                    ? String.format("%.0f", tb)
+                    : String.format("%.1f", tb);
+            return tbStr + "TB";
+        }
+        return capacity + "GB";
+    }
+
+    @Override
+    public String toString() {
+        String base = super.toString(); // "<name> - <price/N/A>"
+        int dashIndex = base.indexOf(" - ");
+        String namePart = dashIndex >= 0 ? base.substring(0, dashIndex) : base;
+        String pricePart = dashIndex >= 0 ? base.substring(dashIndex) : "";
+
+        StringBuilder specs = new StringBuilder(formatCapacity());
+        if (driveType != null && !driveType.isBlank()) {
+            specs.append(" ").append(driveType);
+        }
+
+        return namePart + " " + specs + pricePart;
+    }
 }
