@@ -16,6 +16,7 @@ public class CompatibilityChecker {
         rules.add(new RamCapacityRule());
         rules.add(new CoolerSocketRule());
         rules.add(new RamGenerationRule());
+        rules.add(new PowerRequirementRule());
     }
 
     public List<CompatibilityResult> runAll(Build build) {
