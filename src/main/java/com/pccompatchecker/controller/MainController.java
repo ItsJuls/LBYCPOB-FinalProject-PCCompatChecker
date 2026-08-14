@@ -15,6 +15,7 @@ import com.pccompatchecker.controller.filter.ComponentFilters;
 import com.pccompatchecker.controller.filter.FilterGroup;
 import com.pccompatchecker.controller.filter.FilterPopup;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -168,20 +169,43 @@ public class MainController {
 
     /**
      * Wires a dropdown's "Filter" button to a checklist popup built from the
-     * given filter groups. Toggling a checkbox re-filters the master list and
-     * pushes the result into the combo box's items; the button label shows
-     * how many filters are currently active.
+     * given filter groups, plus a shared price range slider and sort dropdown.
+     * Any change re-filters and re-sorts the master list and pushes the
+     * result into the combo box's items; the button label shows how many
+     * filters (checkboxes + price range) are currently active.
      */
-    private <T> void setupFilter(SearchableComboBox<T> comboBox, Button filterButton,
-                                  List<T> masterList, List<FilterGroup<T>> groups) {
+    private <T extends Component> void setupFilter(SearchableComboBox<T> comboBox, Button filterButton,
+                                                     List<T> masterList, List<FilterGroup<T>> groups) {
+
+        double priceMin = masterList.stream()
+                .flatMap(t -> t.getPricePhp().stream())
+                .min(Double::compareTo).orElse(0.0);
+        double priceMax = masterList.stream()
+                .flatMap(t -> t.getPricePhp().stream())
+                .max(Double::compareTo).orElse(0.0);
 
         FilterPopup<T> popup = new FilterPopup<>(
                 groups,
-                (Predicate<T> predicate) -> {
+                priceMin, priceMax,
+                (Predicate<T> predicate, FilterPopup.SortOption sortOption) -> {
                     T previousSelection = comboBox.getValue();
+
                     List<T> filtered = masterList.stream()
                             .filter(predicate)
                             .collect(Collectors.toList());
+
+                    Comparator<T> comparator = switch (sortOption) {
+                        case PRICE_LOW_HIGH -> Comparator.comparingDouble(
+                                (T t) -> t.getPricePhp().orElse(Double.MAX_VALUE));
+                        case PRICE_HIGH_LOW -> Comparator.comparingDouble(
+                                (T t) -> t.getPricePhp().orElse(Double.MIN_VALUE)).reversed();
+                        case NAME_A_Z -> Comparator.comparing(T::getName, String.CASE_INSENSITIVE_ORDER);
+                        default -> null;
+                    };
+                    if (comparator != null) {
+                        filtered.sort(comparator);
+                    }
+
                     comboBox.getItems().setAll(filtered);
                     if (previousSelection != null && filtered.contains(previousSelection)) {
                         comboBox.setValue(previousSelection);

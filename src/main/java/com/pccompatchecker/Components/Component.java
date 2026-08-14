@@ -28,13 +28,18 @@ public abstract class Component {
     public abstract String getCategory();
     public abstract String getSpecSummary();
 
-    private static final double USD_TO_PHP = 61.30;
+    public static final double USD_TO_PHP = 61.30;
+
+    /** Price converted to PHP, empty if the source data had no price for this part. */
+    public Optional<Double> getPricePhp() {
+        return price.map(p -> p * USD_TO_PHP);
+    }
 
     // USD to PHP
     @Override
     public String toString() {
-        String priceLabel = price
-                .map(p -> "₱" + String.format("%,.2f", p * USD_TO_PHP))
+        String priceLabel = getPricePhp()
+                .map(p -> "₱" + String.format("%,.2f", p))
                 .orElse("Price N/A");
         return name + " - " + priceLabel;
     }

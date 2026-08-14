@@ -27,8 +27,53 @@ public class ComponentFilters {
                         new FilterOption<>("LGA1200", c -> socketBucket(c.getSocket()).equals("LGA1200")),
                         new FilterOption<>("LGA1151", c -> socketBucket(c.getSocket()).equals("LGA1151")),
                         new FilterOption<>("Other / Legacy", c -> socketBucket(c.getSocket()).equals("Other"))
+                )),
+                new FilterGroup<>("TDP", List.of(
+                        new FilterOption<>("65W or less", c -> c.getTdp() <= 65),
+                        new FilterOption<>("66-95W", c -> c.getTdp() > 65 && c.getTdp() <= 95),
+                        new FilterOption<>("96-125W", c -> c.getTdp() > 95 && c.getTdp() <= 125),
+                        new FilterOption<>("126-170W", c -> c.getTdp() > 125 && c.getTdp() <= 170),
+                        new FilterOption<>("170W+", c -> c.getTdp() > 170)
+                )),
+                new FilterGroup<>("Microarchitecture", List.of(
+                        new FilterOption<>("Zen 5", c -> microarchBucket(c.getMicroarchitecture()).equals("Zen 5")),
+                        new FilterOption<>("Zen 4", c -> microarchBucket(c.getMicroarchitecture()).equals("Zen 4")),
+                        new FilterOption<>("Zen 3", c -> microarchBucket(c.getMicroarchitecture()).equals("Zen 3")),
+                        new FilterOption<>("Zen 2", c -> microarchBucket(c.getMicroarchitecture()).equals("Zen 2")),
+                        new FilterOption<>("Older AMD (Zen/Zen+/pre-Zen)", c -> microarchBucket(c.getMicroarchitecture()).equals("Older AMD")),
+                        new FilterOption<>("Arrow Lake", c -> microarchBucket(c.getMicroarchitecture()).equals("Arrow Lake")),
+                        new FilterOption<>("Raptor Lake", c -> microarchBucket(c.getMicroarchitecture()).equals("Raptor Lake")),
+                        new FilterOption<>("Alder Lake", c -> microarchBucket(c.getMicroarchitecture()).equals("Alder Lake")),
+                        new FilterOption<>("Coffee Lake / Comet Lake / Rocket Lake", c -> microarchBucket(c.getMicroarchitecture()).equals("Coffee/Comet/Rocket Lake")),
+                        new FilterOption<>("Older Intel", c -> microarchBucket(c.getMicroarchitecture()).equals("Older Intel"))
+                )),
+                new FilterGroup<>("Graphics", List.of(
+                        new FilterOption<>("Has integrated graphics", CPU::hasIntegratedGraphics),
+                        new FilterOption<>("No integrated graphics", c -> !c.hasIntegratedGraphics())
                 ))
         );
+    }
+
+    private static String microarchBucket(String rawMicroarch) {
+        if (rawMicroarch == null) return "Other";
+        String m = rawMicroarch.trim();
+        switch (m) {
+            case "Zen 5": return "Zen 5";
+            case "Zen 4": return "Zen 4";
+            case "Zen 3": return "Zen 3";
+            case "Zen 2": return "Zen 2";
+            case "Zen": case "Zen+":
+            case "Bulldozer": case "Piledriver": case "Steamroller": case "Excavator":
+            case "K10": case "Jaguar": case "Puma+":
+                return "Older AMD";
+            case "Arrow Lake": return "Arrow Lake";
+            case "Raptor Lake": case "Raptor Lake Refresh": return "Raptor Lake";
+            case "Alder Lake": return "Alder Lake";
+            case "Rocket Lake": case "Comet Lake": case "Coffee Lake": case "Coffee Lake Refresh":
+                return "Coffee/Comet/Rocket Lake";
+            default:
+                return "Older Intel";
+        }
     }
 
     // ---- Motherboard -----------------------------------------------------
