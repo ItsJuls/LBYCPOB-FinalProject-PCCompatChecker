@@ -33,7 +33,9 @@ public abstract class Component {
     // USD to PHP
     @Override
     public String toString() {
-        double phpPrice = price.orElse(0.0) * USD_TO_PHP;
-        return name + " - ₱" + String.format("%,.2f", phpPrice);
+        String priceLabel = price
+                .map(p -> "₱" + String.format("%,.2f", p * USD_TO_PHP))
+                .orElse("Price N/A");
+        return name + " - " + priceLabel;
     }
 }

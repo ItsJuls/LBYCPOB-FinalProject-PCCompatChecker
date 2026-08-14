@@ -48,4 +48,16 @@ public class GPU extends Component {
     public String getSpecSummary() {
         return chipset + ", " + memory + "GB VRAM";
     }
+
+    @Override
+    public String toString() {
+        String base = super.toString();
+        int dashIndex = base.indexOf(" - ");
+        String namePart = dashIndex >= 0 ? base.substring(0, dashIndex) : base;
+        String pricePart = dashIndex >= 0 ? base.substring(dashIndex) : "";
+        String label = (chipset != null && !chipset.isBlank())
+                ? namePart + " " + chipset
+                : namePart;
+        return label + pricePart;
+    }
 }
