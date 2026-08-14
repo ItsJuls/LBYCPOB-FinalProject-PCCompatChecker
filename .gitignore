@@ -112,3 +112,6 @@ bin/
 /target/classes/com/pccompatchecker/Repotest.class
 /target/classes/com/pccompatchecker/util/SocketCompatibilityResolver.class
 /target/classes/com/pccompatchecker/Compatibility/rules/SocketCompatibilityRule.class
+/target/classes/com/pccompatchecker/util/GpuPowerLookup.class
+/target/classes/com/pccompatchecker/controller/MainController$1.class
+/target/classes/com/pccompatchecker/Compatibility/rules/PowerRequirementRule.class
