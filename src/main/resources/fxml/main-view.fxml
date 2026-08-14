@@ -33,42 +33,50 @@
     <!-- CPU -->
     <Label layoutX="19.0" layoutY="158.0" text="CPU" />
 
-    <SearchableComboBox fx:id="cpuCBox" layoutX="19.0" layoutY="183.0" prefWidth="400.0" promptText="Select CPU" />
+    <SearchableComboBox fx:id="cpuCBox" layoutX="19.0" layoutY="183.0" prefWidth="350.0" promptText="Select CPU" />
+    <Button fx:id="cpuFilterButton" layoutX="377.0" layoutY="183.0" prefWidth="55.0" text="Filter" />
 
     <!-- Motherboard -->
     <Label layoutX="19.0" layoutY="238.0" text="Motherboard" />
 
-    <SearchableComboBox fx:id="moboCBox" layoutX="19.0" layoutY="263.0" prefWidth="400.0" promptText="Select Motherboard" />
+    <SearchableComboBox fx:id="moboCBox" layoutX="19.0" layoutY="263.0" prefWidth="350.0" promptText="Select Motherboard" />
+    <Button fx:id="moboFilterButton" layoutX="377.0" layoutY="263.0" prefWidth="55.0" text="Filter" />
 
     <!-- RAM -->
     <Label layoutX="19.0" layoutY="318.0" text="RAM" />
 
-    <SearchableComboBox fx:id="ramCBox" layoutX="19.0" layoutY="343.0" prefWidth="400.0" promptText="Select RAM" />
+    <SearchableComboBox fx:id="ramCBox" layoutX="19.0" layoutY="343.0" prefWidth="350.0" promptText="Select RAM" />
+    <Button fx:id="ramFilterButton" layoutX="377.0" layoutY="343.0" prefWidth="55.0" text="Filter" />
 
     <!-- GPU -->
     <Label layoutX="19.0" layoutY="398.0" text="GPU" />
 
-    <SearchableComboBox fx:id="gpuCBox" layoutX="19.0" layoutY="423.0" prefWidth="400.0" promptText="Select GPU" />
+    <SearchableComboBox fx:id="gpuCBox" layoutX="19.0" layoutY="423.0" prefWidth="350.0" promptText="Select GPU" />
+    <Button fx:id="gpuFilterButton" layoutX="377.0" layoutY="423.0" prefWidth="55.0" text="Filter" />
 
     <!-- Storage -->
     <Label layoutX="19.0" layoutY="478.0" text="Storage" />
 
-    <SearchableComboBox fx:id="storageCBox" layoutX="19.0" layoutY="503.0" prefWidth="400.0" promptText="Select Storage" />
+    <SearchableComboBox fx:id="storageCBox" layoutX="19.0" layoutY="503.0" prefWidth="350.0" promptText="Select Storage" />
+    <Button fx:id="storageFilterButton" layoutX="377.0" layoutY="503.0" prefWidth="55.0" text="Filter" />
 
     <!-- CPU Cooler -->
     <Label layoutX="19.0" layoutY="558.0" text="CPU Cooler" />
 
-    <SearchableComboBox fx:id="coolerCBox" layoutX="19.0" layoutY="583.0" prefWidth="400.0" promptText="Select CPU Cooler" />
+    <SearchableComboBox fx:id="coolerCBox" layoutX="19.0" layoutY="583.0" prefWidth="350.0" promptText="Select CPU Cooler" />
+    <Button fx:id="coolerFilterButton" layoutX="377.0" layoutY="583.0" prefWidth="55.0" text="Filter" />
 
     <!-- PSU -->
     <Label layoutX="19.0" layoutY="638.0" text="PSU" />
 
-    <SearchableComboBox fx:id="psuCBox" layoutX="19.0" layoutY="663.0" prefWidth="400.0" promptText="Select PSU" />
+    <SearchableComboBox fx:id="psuCBox" layoutX="19.0" layoutY="663.0" prefWidth="350.0" promptText="Select PSU" />
+    <Button fx:id="psuFilterButton" layoutX="377.0" layoutY="663.0" prefWidth="55.0" text="Filter" />
 
     <!-- Case -->
     <Label layoutX="19.0" layoutY="718.0" text="Case" />
 
-    <SearchableComboBox fx:id="caseCBox" layoutX="19.0" layoutY="743.0" prefWidth="250.0" promptText="Select Case" />
+    <SearchableComboBox fx:id="caseCBox" layoutX="19.0" layoutY="743.0" prefWidth="200.0" promptText="Select Case" />
+    <Button fx:id="caseFilterButton" layoutX="227.0" layoutY="743.0" prefWidth="55.0" text="Filter" />
 
     <!-- Budget -->
     <Label layoutX="469.0" layoutY="158.0" text="Budget" />
