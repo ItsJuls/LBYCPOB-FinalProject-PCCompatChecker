@@ -71,6 +71,9 @@ public class MainController {
     private Label budgetValueLabel;
 
     @FXML
+    private Label totalSpentLabel;
+
+    @FXML
     private Label remainingBudgetLabel;
 
     @FXML
@@ -169,6 +172,10 @@ public class MainController {
 
         budgetValueLabel.setText(
                 String.format("Budget: ₱%,.0f", budget)
+        );
+
+        totalSpentLabel.setText(
+                String.format("Total Spent: ₱%,.0f", spent)
         );
 
         remainingBudgetLabel.setText(
