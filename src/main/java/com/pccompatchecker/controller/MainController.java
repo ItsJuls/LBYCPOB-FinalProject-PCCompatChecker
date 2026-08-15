@@ -29,7 +29,6 @@ import javafx.scene.control.Slider;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ComboBox;
 import org.controlsfx.control.SearchableComboBox;
 
 public class MainController {
@@ -91,9 +90,6 @@ public class MainController {
 
     @FXML
     private TextField budgetInput;
-
-    @FXML
-    private ComboBox<String> presetCBox;
 
     @FXML
     private void compatibilityCheck(ActionEvent event) {
@@ -258,17 +254,6 @@ public class MainController {
                 );
             }
         });
-
-        presetCBox.getItems().addAll(
-                "1080p Gaming",
-                "1440p Gaming",
-                "Video Editing",
-                "Office",
-                "Streaming",
-                "High-End Gaming",
-                "Custom"
-        );
-
     }
 
     /**
