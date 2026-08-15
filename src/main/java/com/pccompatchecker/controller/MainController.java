@@ -28,6 +28,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import org.controlsfx.control.SearchableComboBox;
 
 public class MainController {
@@ -80,11 +81,15 @@ public class MainController {
 
     @FXML
     private SearchableComboBox<Case> caseCBox;
+
     @FXML
     private Button caseFilterButton;
 
     @FXML
     private TextArea resultsTextArea;
+
+    @FXML
+    private TextField budgetInput;
 
     @FXML
     private void compatibilityCheck(ActionEvent event) {
@@ -232,6 +237,23 @@ public class MainController {
         setupFilter(coolerCBox, coolerFilterButton, allCoolers, ComponentFilters.cpuCooler());
         setupFilter(psuCBox, psuFilterButton, allPsus, ComponentFilters.psu());
         setupFilter(caseCBox, caseFilterButton, allCases, ComponentFilters.pcCase());
+
+        budgetInput.setOnAction(event -> {
+            try {
+                double budget = Double.parseDouble(budgetInput.getText());
+
+                if (budget >= budgetSlider.getMin() &&
+                        budget <= budgetSlider.getMax()) {
+
+                    budgetSlider.setValue(budget);
+                }
+
+            } catch (NumberFormatException e) {
+                budgetInput.setText(
+                        String.format("%.0f", budgetSlider.getValue())
+                );
+            }
+        });
 
     }
 

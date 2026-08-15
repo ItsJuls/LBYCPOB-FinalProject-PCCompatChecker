@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.SearchableComboBox?>
+<?import javafx.scene.control.TextField?>
 
 <!--AnchorPane is being used as our main canvas.-->
 <!--This makes it easier to position controls manually-->
@@ -82,6 +83,8 @@
     <Label layoutX="469.0" layoutY="158.0" text="Budget" />
 
     <Slider fx:id="budgetSlider" layoutX="469.0" layoutY="188.0" max="500000" min="0" prefWidth="250.0" value="250000" />
+
+    <TextField fx:id="budgetInput" layoutX="730.0" layoutY="178.0" prefWidth="120.0" promptText="Enter budget" />
 
     <!-- Remaining Budget -->
     <Label fx:id="budgetValueLabel" layoutX="469.0" layoutY="218.0" text="Budget: ₱0" />
