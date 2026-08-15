@@ -3,6 +3,7 @@ module com.pccompatchecker {
     requires javafx.fxml;
     requires com.fasterxml.jackson.databind;
     requires org.controlsfx.controls;
+    requires java.net.http;
 
     opens com.pccompatchecker.Components to com.fasterxml.jackson.databind;
     opens com.pccompatchecker to javafx.fxml;

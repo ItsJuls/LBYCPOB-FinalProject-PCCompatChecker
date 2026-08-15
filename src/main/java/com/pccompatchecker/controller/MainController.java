@@ -31,6 +31,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.controlsfx.control.SearchableComboBox;
 
+
 public class MainController {
 
     // PC component dropdowns
@@ -244,6 +245,10 @@ public class MainController {
 
     @FXML
     public void initialize() {
+
+        Thread forexThread = new Thread(Component::updateExchangeRate);
+        forexThread.setDaemon(true);
+        forexThread.start();
 
         List<CPU> allCpus = repository.getCpus();
         List<Motherboard> allMotherboards = repository.getMotherboards();
