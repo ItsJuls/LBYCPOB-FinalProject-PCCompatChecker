@@ -70,7 +70,11 @@ public class MainController {
     private Label budgetValueLabel;
 
     @FXML
+    private Label remainingBudgetLabel;
+
+    @FXML
     private SearchableComboBox<PSU> psuCBox;
+
     @FXML
     private Button psuFilterButton;
 
@@ -128,6 +132,45 @@ public class MainController {
         }
     }
 
+    private void updateBudgetDisplay() {
+        double budget = budgetSlider.getValue();
+        double spent = 0;
+
+        if (cpuCBox.getValue() != null)
+            spent += cpuCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (moboCBox.getValue() != null)
+            spent += moboCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (ramCBox.getValue() != null)
+            spent += ramCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (gpuCBox.getValue() != null)
+            spent += gpuCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (storageCBox.getValue() != null)
+            spent += storageCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (coolerCBox.getValue() != null)
+            spent += coolerCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (psuCBox.getValue() != null)
+            spent += psuCBox.getValue().getPricePhp().orElse(0.0);
+
+        if (caseCBox.getValue() != null)
+            spent += caseCBox.getValue().getPricePhp().orElse(0.0);
+
+        double remaining = budget - spent;
+
+        budgetValueLabel.setText(
+                String.format("Budget: ₱%,.0f", budget)
+        );
+
+        remainingBudgetLabel.setText(
+                String.format("Remaining: ₱%,.0f", remaining)
+        );
+    }
+
     // Loads component data from the JSONL files
     private final ComponentRepository repository = new ComponentRepository();
 
@@ -152,6 +195,35 @@ public class MainController {
         psuCBox.getItems().addAll(allPsus);
         caseCBox.getItems().addAll(allCases);
 
+        budgetSlider.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        cpuCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        moboCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        ramCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        gpuCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        storageCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        coolerCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        psuCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        caseCBox.valueProperty().addListener(
+                (obs, oldValue, newValue) -> updateBudgetDisplay()
+        );
+        updateBudgetDisplay();
+
         setupFilter(cpuCBox, cpuFilterButton, allCpus, ComponentFilters.cpu());
         setupFilter(moboCBox, moboFilterButton, allMotherboards, ComponentFilters.motherboard());
         setupFilter(ramCBox, ramFilterButton, allRams, ComponentFilters.ram());
@@ -161,10 +233,6 @@ public class MainController {
         setupFilter(psuCBox, psuFilterButton, allPsus, ComponentFilters.psu());
         setupFilter(caseCBox, caseFilterButton, allCases, ComponentFilters.pcCase());
 
-        budgetSlider.valueProperty().addListener((obs, oldValue, newValue) -> {
-            budgetValueLabel.setText(String.format("₱%,.0f", newValue.doubleValue())
-            );
-        });
     }
 
     /**
