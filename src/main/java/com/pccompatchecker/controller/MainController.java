@@ -98,6 +98,9 @@ public class MainController {
     private Button clearBuildButton;
 
     @FXML
+    private Label componentCountLabel;
+
+    @FXML
     private void compatibilityCheck(ActionEvent event) {
         // Get the components selected by the user.
         CPU cpu = cpuCBox.getValue();
@@ -203,6 +206,39 @@ public class MainController {
         );
     }
 
+    private void updateComponentCount() {
+
+        int count = 0;
+
+        if (cpuCBox.getValue() != null)
+            count++;
+
+        if (moboCBox.getValue() != null)
+            count++;
+
+        if (ramCBox.getValue() != null)
+            count++;
+
+        if (gpuCBox.getValue() != null)
+            count++;
+
+        if (storageCBox.getValue() != null)
+            count++;
+
+        if (coolerCBox.getValue() != null)
+            count++;
+
+        if (psuCBox.getValue() != null)
+            count++;
+
+        if (caseCBox.getValue() != null)
+            count++;
+
+        componentCountLabel.setText(
+                "Components Selected: " + count + " / 8"
+        );
+    }
+
     // Loads component data from the JSONL files
     private final ComponentRepository repository = new ComponentRepository();
 
@@ -228,31 +264,31 @@ public class MainController {
         caseCBox.getItems().addAll(allCases);
 
         budgetSlider.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         cpuCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         moboCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         ramCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         gpuCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         storageCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         coolerCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         psuCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         caseCBox.valueProperty().addListener(
-                (obs, oldValue, newValue) -> updateBudgetDisplay()
+                (obs, oldValue, newValue) -> {updateBudgetDisplay(); updateComponentCount();}
         );
         updateBudgetDisplay();
 
