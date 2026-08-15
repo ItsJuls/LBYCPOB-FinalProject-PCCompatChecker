@@ -95,6 +95,9 @@ public class MainController {
     private TextField budgetInput;
 
     @FXML
+    private Button clearBuildButton;
+
+    @FXML
     private void compatibilityCheck(ActionEvent event) {
         // Get the components selected by the user.
         CPU cpu = cpuCBox.getValue();
@@ -138,6 +141,23 @@ public class MainController {
                             "  " + result.getMessage() + "\n\n"
             );
         }
+    }
+
+    @FXML
+    private void clearBuild(ActionEvent event) {
+
+        cpuCBox.setValue(null);
+        moboCBox.setValue(null);
+        ramCBox.setValue(null);
+        gpuCBox.setValue(null);
+        storageCBox.setValue(null);
+        coolerCBox.setValue(null);
+        psuCBox.setValue(null);
+        caseCBox.setValue(null);
+
+        resultsTextArea.clear();
+
+        updateBudgetDisplay();
     }
 
     private void updateBudgetDisplay() {
